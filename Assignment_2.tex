@@ -1,0 +1,285 @@
+\documentclass[a4paper,10pt]{article} 
+\usepackage{multicol} 
+% ---------- 第一步：页面布局/基础配置（最先加载） ----------
+\usepackage{geometry}
+\geometry{left=1in,right=0.75in,top=0.9in,bottom=0.9in}
+\usepackage{microtype} % 更好的微排版
+
+% ---------- 第二步：编码/字体基础（必须在字体包前） ----------
+\usepackage[T1]{fontenc} % 输出字体编码
+\usepackage[utf8]{inputenc} % 输入字符编码
+
+% ---------- 第三步：核心字体包（newtx必须紧跟编码包） ----------
+\usepackage{newtxtext} % Times西文（优先级最高，先加载）
+\usepackage{amsmath, amssymb, amsthm} % 数学公式
+\usepackage{newtxmath} % Times数学（依赖newtxtext）
+
+%----------- 数学相关包 ---------------------------------------
+
+\usepackage{mathtools}  % 改进 amsmath
+                        % % 1. 更灵活的公式对齐（解决amsmath的小缺陷）
+                        % \begin{align*}
+                        % f(x) &= x^2 + 3x + 2 \\
+                        % g(x) &= \underbrace{(x+1)(x+2)}_{\text{因式分解}} % mathtools的\underbrace增强
+                        % \end{align*}
+
+                        % % 2. 自定义带括号的数学符号（原生LaTeX做不到）
+                        % \DeclarePairedDelimiter\abs{\lvert}{\rvert} % 定义绝对值符号
+                        % $\abs{x}$ % 基础用法：|x|
+                        % $\abs*{x + y}$ % 带*自动适配大小：|x+y|
+
+                        % % 3. 数学符号的换行对齐（适合长公式）
+                        % \[
+                        % \sum_{n=1}^\infty \mathtoolsset{showonlyrefs} % 只显示引用的公式编号
+                        % \frac{1}{n^2} = \frac{\pi^2}{6}
+                        % \]
+
+\usepackage{bm} % 粗体希腊字母 \bm{\alpha}
+% 错误用法：\textbf{x} 只能加粗文本，数学环境中无效
+% 正确用法：\bm{} 加粗数学符号
+% $\bm{x}$ % 向量x（加粗）
+% $\bm{\sum_{n=1}^\infty \frac{1}{n^2}}$ % 加粗整个公式
+% $\bm{A}_{ij}$ % 矩阵A的第ij元素（仅A加粗）
+\usepackage{esint} % 更多样的积分符号
+
+
+% =========计算机相关论文可以加==========
+\usepackage{algorithm}      % 提供 algorithm 环境，给算法加编号、标题 
+\usepackage{algpseudocode}  % 提供 algorithmic 环境，支持伪代码的标准语法（If/For/While/Return 等），美赛中展示算法逻辑必备。
+% 定义伪代码自定义关键词（解决 \Initialize 未定义）
+\algnewcommand{\Initialize}{\State\textbf{Initialize:} } % 初始化关键词
+\algnewcommand{\ArgMin}{\arg\min} % 统一 argmin 写法（可选）
+
+
+% ================.md转.tex的常用命令=========
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{longtable}
+\usepackage[T1]{fontenc}
+\usepackage{fvextra}     % fancyvrb 的增强版，支持自动换行
+
+%  --- 物理特定配置 ---
+\usepackage{siunitx} % 国际单位制排版神器
+\sisetup{unit-mode=text} % 避免数学字体下的单位倾斜
+% 常用物理符号
+\newcommand{\vect}[1]{\vec{#1}}
+\newcommand{\Vect}[1]{\overrightarrow{#1}} % 大写V开头，区分普通箭头，宽箭头适配任意长度\vect{AB}
+\newcommand{\grad}{\nabla}      % 梯度算子
+\newcommand{\degree}{^\circ}    % 角度
+
+% ===========自定义命令==============
+\newcommand{\pd}[2]{\dfrac{\partial #1}{\partial #2}}   % 偏导
+\newcommand{\PD}[2]{\frac{\partial #1}{\partial #2}}   % 另一种偏导写法
+\newcommand{\eq}[1]{Eq.~(\ref{#1})}                    % 引用公式
+\newcommand{\fig}[1]{Figure~\ref{#1}}                  % 引用图
+
+% ----(数学,注意检查一下有没有重复)---
+\newcommand{\tab}[1]{Table~\ref{#1}}
+\newcommand{\dd}{\mathrm{d}} % 微分符号 d 需正体
+\newcommand{\dx}{\,\mathrm{d}x}
+\newcommand{\limit}[2]{\lim_{#1 \to #2}}
+\newcommand{\pard}[2]{\frac{\partial #1}{\partial #2}} % 偏导数
+
+% --- 线性代数特定配置 ---
+% % --- 极速输入快捷键 (First Principles: 减少按键次数) ---
+\newcommand{\R}{\mathbb{R}} % 实数集 R
+\newcommand{\C}{\mathbb{C}} % 复数集 C
+\newcommand{\N}{\mathbb{N}} % 自然数集
+\newcommand{\bvec}[1]{\mathbf{#1}} % 向量加粗，如 \bvec{x}
+\newcommand{\mat}[1]{\begin{bmatrix}#1\end{bmatrix}} % 快速写矩阵
+\newcommand{\pmat}[1]{\begin{pmatrix}#1\end{pmatrix}} % 圆括号矩阵
+\newcommand{\trans}{^\top} % 转置符号 T
+\newcommand{\inv}{^{-1}}   % 求逆符号 -1
+\DeclareMathOperator{\rank}{rank} % 秩
+\DeclareMathOperator{\tr}{tr}     % 迹
+\DeclareMathOperator{\spanop}{span} % 生成空间
+
+% --- 统计学特定配置 ---
+% 常用算符
+\newcommand{\Prob}[1]{P\left(#1\right)} % 概率 P(X)
+\newcommand{\Exp}[1]{E\left[#1\right]}  % 期望 E[X]
+\newcommand{\Var}[1]{\text{Var}\left(#1\right)} % 方差
+\newcommand{\Cov}[1]{\text{Cov}\left(#1\right)} % 协方差
+\newcommand{\indep}{\perp \!\!\! \perp} % 独立符号
+% 常用分布
+\newcommand{\Norm}{\mathcal{N}} % 正态分布 N
+\newcommand{\Bin}{\text{Bin}}   % 二项分布
+\newcommand{\Poi}{\text{Pois}}  % 泊松分布
+% 回归分析常用
+\newcommand{\yhat}{\hat{y}}     % 预测值 y hat
+\newcommand{\betahat}{\hat{\beta}}
+% 了解怎么写就好了，具体用不着就不写
+
+
+
+
+\usepackage{titling} % 标题设置
+\usepackage{titlesec} % 自定义标题格式
+\usepackage{float} % 图片浮动控制
+\usepackage{lipsum} % 生成示例文本
+\usepackage{enumitem} % 列表设置
+
+\usepackage{caption} % 图表标题
+\usepackage{subcaption} % 子图表
+\usepackage{tabularx} % 自适应宽度表格
+\usepackage{setspace} % 行间距控制
+\usepackage{fancyhdr} % 页眉页脚
+\usepackage{url} % 超链接
+\usepackage{hyperref} % 超链接
+\usepackage{booktabs}       % 表格
+\usepackage{array}          % 更好看的表格列定义
+\usepackage{multirow}       % 跨行
+\usepackage{listings} % 代码块
+% \usepackage{verbatimbox} % 代码块盒子
+% \usepackage{verbatim}  
+\usepackage{mdframed} % 代码块边框
+\usepackage[numbers,sort&compress,square]{natbib} % 参考文献科技类文献引用格式[1]
+% ----------------------------------
+\lstset{
+    basicstyle=\small\ttfamily,  % 字号缩小，减少溢出（可改\footnotesize更小）
+    breaklines=true,             % 强制自动换行（关键！verbatim没有这个功能）
+    breakatwhitespace=false,     % 不局限于空格换行
+    backgroundcolor=\color{gray!5},  % 浅灰背景（和你要的效果一致）
+    frame=single,                % 边框（替代\fbox）
+    framesep=3pt,                % 边框内边距
+    xleftmargin=5pt,             % 左边距
+    xrightmargin=5pt,            % 右边距
+    lineskip=0.5pt,              % 行间距微调
+    showstringspaces=false       % 不显示空格符号，更美观
+}
+% hyperlink settings
+
+
+% ==========画图的设置==================
+\usepackage{graphicx} % 插入图片
+\usepackage{tikz} % TikZ 画图
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}            % 最新版兼容性必须加！
+% \tikzset{myplotstyle/.style={red, thick, mark=triangle}}   % 也可以通过设计全局变量如左，然后在\addplot中使用myplotstyle调用如：
+% \addplot[myplotstyle] coordinates {...}; % 复用样式于文中
+% ======================================
+
+\usepackage{xcolor}   % 代码块颜色
+% ===========荧光笔highlight操作================
+% -----------颜色定义----------------
+\definecolor{refblue}{HTML}{A3C4F3}   
+\definecolor{repgreen}{HTML}{C8E6C9}  
+\definecolor{transorange}{HTML}{FFD54F} 
+\definecolor{subviolet}{HTML}{E1BEE7}  
+\definecolor{ellipgray}{HTML}{E0E0E0}  
+% 这里可以根据需要定义更多颜色
+% ----------定义highlight命令-----------
+\newcommand{\refhl}[1]{\sethlcolor{refblue}\hl{#1}}     % Reference
+\newcommand{\rephl}[1]{\sethlcolor{repgreen}\hl{#1}}    % Repetition
+\newcommand{\transhl}[1]{\sethlcolor{transorange}\hl{#1}} % Transition
+\newcommand{\subhl}[1]{\sethlcolor{subviolet}\hl{#1}}   % Substitution
+\newcommand{\elliphl}[1]{\sethlcolor{ellipgray}\hl{#1}} % Ellipsis
+% ----------------------------------
+% 此后在文中只需要使用 \refhl{...}, \rephl{...}, \transhl{...}, \subhl{...}, \elliphl{...} 即可使得里面的...内容高亮显示为对应颜色
+% ===============================================
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable,skins}
+\usepackage{hyperref} % 超链接
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue, 
+    urlcolor=blue,
+    pdfborder={0 0 0}  % 关键：去掉边框
+}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}{Definition}
+
+% \lstdefinestyle{mdstyle}{
+%     language=Markdown,
+%     basicstyle=\small\ttfamily,
+%     breaklines=true,
+%     frame=single,
+%     backgroundcolor=\color{gray!5},
+%     % 关键：让listings忽略MD里的特殊符号，仅转义必要的
+%     escapeinside=||,  % 用|包裹需要LaTeX编译的内容（可选）
+%     literate={\$}{\$}1  % 保留$符号，不转义
+% }
+
+
+
+% ====================文档开始=======================
+\begin{document}
+\title{UFUG 2104 \\ Written Assignment 1}
+\author{Jincan LI}
+\date{\today}
+\maketitle
+
+\begingroup
+\centering
+\paragraph{Tips:}
+Please clilck the link below to get to the targeted answers.
+
+\textbf{Problem~\ref{pro:1}}
+
+\textbf{Problem~\ref{pro:2}}
+
+\textbf{Problem~\ref{pro:3}}
+
+\textbf{Problem~\ref{pro:4}}
+
+\textbf{Problem~\ref{pro:5}}
+
+\endgroup
+\clearpage
+
+\section{Problem 1}\label{pro:1}
+
+(16 pts) The pdf (probability density function) of \(X\) is given by
+\[
+f_{X}(x) = 
+\begin{cases}
+-\frac{1}{4}x, & -2 \le x < 0\\
+cx^2, & 0 \le x \le 3\\
+0, & \text{otherwise}
+\end{cases}
+\]
+\begin{enumerate}[label=(\alph*)]
+\item Find the value of the constant $c$.
+\item Plot the pdf of $X$ from -3 to 4. If you plot by hand, make sure that your plot shows the
+main features, i.e., where they intercept the y-axis and x-axis.
+(c) Find the expression for the cdf (cumulative distribution function) of $X$.
+(d) Find the expected value of $X$.
+(e) Find the probability of the event $A = \{1 \le x \le 2\}$.
+(f) Find the conditional pdf of $X$ given $A$, $f_{X|A}(x|A)$ and plot it from -3 to 4. If you plot by
+hand, make sure that your plot shows the main features, i.e. where they intercept the y-
+axis and x-axis.
+(g) Find the conditional expected value of $X$ given $A$, $\mathbb{E}[X|A]$
+\end{enumerate}
+\paragraph{Solution}
+\paragraph{(a)}
+By the definition of pdf, we have
+\[
+\int_{-\infty}^{\infty}f_X(x)dx = 1
+\]
+and given the property of the function, we have
+\[
+\int_{-\infty}^{\infty}f_X(x)dx = \int_{-\infty}^{-2}0dx + \int_{-2}^{0}\left(-\frac{1}{4}x\right)dx + \int_{0}^{3}(cx^2)dx + \int_{4}^{\infty}0dx = 1 
+\]
+Which means
+\[
+(-\frac{1}{8}x^2)\bigg|_{-2}^{0} + (\frac{1}{3}cx^3)\bigg|_{0}^{3} = \frac{1}{2} + 9c = 1
+\]
+\(\Rightarrow \boxed{c = \frac{1}{18}}\)
+\paragraph{(b)}
+\begin{figure}
+
+
+\end{figure}
+% =================================================================
+\section{Problem 2}\label{pro:2}
+
+\section{Problem 3}\label{pro:3}
+
+\section{Problem 4}\label{pro:4}
+
+\section{Problem 5}\label{pro:5}
+
+\end{document}
