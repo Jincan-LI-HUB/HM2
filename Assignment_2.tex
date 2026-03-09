@@ -305,6 +305,35 @@ And the same expectation value of 0m can be applied to the case when $x > 3$. So
 \boxed{\mathbb{E}(X) = -\frac{2}{3} + \frac{9}{8} = \frac{11}{24}}
 \]
 
+\paragraph{(e)}
+For the event $A = \{1 \le x \le 2\}$, the probability can be calculated in this way:
+\[
+\boxed{\mathbb{P}(A) = \int_{1}^{2}\frac{1}{18}x^2 = \frac{1}{54}x^3\bigg|_{x = 1}^{2} = \frac{7}{54}}
+\]
+
+\paragraph{(f)}
+When $x \in [1,2]$, the conditional pdf can be calculated as below:
+\[
+f_{X|A}(x | A) = \frac{f_X(x)}{\mathbb{P}(A)} = \frac{\frac{1}{18}x^2}{\frac{7}{54}} = \frac{3}{7}x^2, \quad x \in [1,2]
+\] 
+When $x \notin [1,2]$, the conditional pdf can be calculated as $0$.
+So we have:
+\[
+f_{X|A}(x|A) = 
+\begin{cases}
+\frac{3}{7}x^2 & x \in [1,2]\\
+0 &  \text{otherwise}
+\end{cases}
+\] 
+
+\paragraph{(g)}
+we only have to calculate the conditional Expectation when $x \in [1,2]$:
+\[
+\boxed{\mathbb{E}[X|A] = \int_{1}^{2}\frac{3}{7}x^2 = \frac{9}{7}}
+\]
+
+
+
 
 
 
