@@ -318,12 +318,13 @@ f_{X|A}(x | A) = \frac{f_X(x)}{\mathbb{P}(A)} = \frac{\frac{1}{18}x^2}{\frac{7}{
 \] 
 When $x \notin [1,2]$, the conditional pdf can be calculated as $0$.
 So we have:
-\[
+\[\boxed{
 f_{X|A}(x|A) = 
 \begin{cases}
 \frac{3}{7}x^2 & x \in [1,2]\\
 0 &  \text{otherwise}
 \end{cases}
+}
 \] 
 
 \paragraph{(g)}
@@ -332,16 +333,106 @@ we only have to calculate the conditional Expectation when $x \in [1,2]$:
 \boxed{\mathbb{E}[X|A] = \int_{1}^{2}\frac{3}{7}x^2 = \frac{9}{7}}
 \]
 
-
-
-
-
-
-
 % =================================================================
 \section{Problem 2}\label{pro:2}
+(16 pts) Suppose we have two machines. The lifetime of Machine 1 in years, $X_1$, follows an
+exponential distribution with parameter $\lambda_1 = \frac{1}{9}$. The lifetime of Machine 2 in years, $X_2$, follows
+an exponential distribution with parameter $\lambda_2 = \frac{1}{5}$.
+\begin{enumerate}[label=(\alph*)]
+    \item Compute the expected values of $X_1$ and $X_2$. Which machine lasts longer on average?
+    \item Find the conditional pdf of $X_2$ given that the lifetime of Machine 2 is less than 4 years.
+    \item Compute the conditional expected value of $X_2$ given that the lifetime of Machine 2 is less than 4 years.
+    \item Find the probability that the lifetime of Machine 1 exceeds 9 years. Repeat for Machine 2.
+    \item Find the probability that Machine 1 will continue to work for at least another 6 years, given that the machine has been working for 9 years already
+\end{enumerate}
+\paragraph{Solution}
+\paragraph{(a)}
+\paragraph{Lemma}
+We have the expectation value:
+\[
+\mathbb{E}[X] = \int_{-\infty}^{\infty} \lambda e^{-\lambda x}dx = \int_{-\infty}^{0} \lambda e^{-\lambda x}dx + \int_{0}^{\infty} \lambda e^{-\lambda x}dx = 0 + (-e^{-\lambda x})\bigg|_{0}^{\infty} = \frac{1}{\lambda}  
+\]
+So the expectation of the Random Variables \(X_1\), \(X_2\) are:
+\[
+\boxed{\mathbb{E}[X_1] = \frac{1}{\lambda_1} = 9, \quad \mathbb{E}[X_2] = \frac{1}{\lambda_2} = 5}
+\]
+
+\paragraph{(b)}
+By the reality meaning of the exponential distribution of the lifetime of the machine, we have \(x \ge 0\)
+And the probability of \(0< x < 4\), we have
+\[
+\mathbb{P}_X[0 < x < 4] = \int_{0}^{4} \frac{e^{-\frac{x}{5}}}{5} = -e^{-\frac{x}{5}}\bigg|_{0}^{4} = 1 - e^{-\frac{4}{5}}
+\]
+And the condotional pdf can be divided to 2 situations:
+when \(0 < x < 4\), we have
+\[
+\mathbb{P}_X[0 < x < x_1] = \int_{0}^{x} \frac{e^{-\frac{x_1}{5}}}{5} = 1 - e^{-\frac{x_1}{5}}
+\]
+So the conditional pdf can be written as:
+\[
+\mathbb{P}[X] = \frac{\frac{1}{5}e^{-\frac{x_1}{5}}}{1 - e^{-\frac{4}{5}}}
+\]
+when \(x > 4\), and we have:
+\[
+\mathbb{P}[X] = 1
+\]
+So in conclusion, we have
+\[
+\mathbb{P}[X] = 
+\begin{cases}
+\frac{\frac{1}{5}e^{-\frac{x_1}{5}}}{1 - e^{-\frac{4}{5}}} & 0 \le x < 4 \\
+0 & 4 < x
+\end{cases}
+\]
+we will have the conditional pdf as below:
+\paragraph{(c)}
+We will have the conditional expected value of $X_2$ given \(X_2 < 4\) 
+By definition,
+\[
+\mathbb{E}[X_2|X_2 < 4] = \int_{0}^{\infty}xf_{X_2|X_2 < 4}(x)dx = \frac{1}{5(1 - e^{-\frac{4}{5}})} \int_{0}^{4} xe^{-\frac{x}{5}}dx = 25 - 45e^{-\frac{4}{5}}
+\]
+And we can calculate the numerical value
+\[
+\boxed{\mathbb{E}[X_2|X_2 < 4] = \frac{5-9e^{-\frac{4}{5}}}{1-e^{-\frac{4}{5}}}} \approx 1.734 \text{years}\]
+
+\paragraph{(d)}
+for the exponential distribution,
+\[
+\mathbb{P}[X > t] = e^{-\lambda t}
+\]
+for machine 1, 
+\[
+\mathbb{P}[X_1 > 9] = e^{-1}
+\]
+for machine 2,
+\[
+\mathbb{P}[X_2 > 9] = e^{\frac{9}{5}}
+\]
+So 
+\[
+\boxed{
+\mathbb{P}[X_1 > 9] = e^{-1} \approx 0.3679, \quad
+\mathbb{P}[X_2 > 9] = e^{-\frac{9}{5}} \approx 0.1653.
+}
+\]
+
+\paragraph{(e)}
+We want
+\[
+\mathbb{P}[X_1 > 15 | X_1 > 9] = \frac{\mathbb{P}[X_1 > 15]}{\mathbb{P}[X_1 > 9]}
+\]
+Since \(X_1 \propto \Exp{\frac{1}{9}}\)
+\[
+\mathbb{P}(X_1 > 15) = e^{-\frac{5}{3}}, \quad \mathbb{P}(X_1 > 9) = e^{-1}
+\]
+Hence 
+\[
+\boxed{\mathbb{P}(X_1 > 15 | X_1 > 9) = e^{-\frac{2}{3}}}
+\]
 
 \section{Problem 3}\label{pro:3}
+
+
 
 \section{Problem 4}\label{pro:4}
 
