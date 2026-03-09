@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.5)  9 MAR 2026 21:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.5)  9 MAR 2026 21:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1603,7 +1603,7 @@ File: fig_4.png Graphic file (type png)
 <use fig_4.png>
 Package pdftex.def Info: fig_4.png  used on input line 574.
 (pdftex.def)             Requested size: 423.92897pt x 253.23096pt.
- [7 <./fig_3.png> <./fig_4.png>] [8] [9] (./Assignment_2.aux)
+ [7 <./fig_3.png> <./fig_4.png>] [8] [9] [10] (./Assignment_2.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
@@ -1612,18 +1612,18 @@ Package rerunfilecheck Info: File `Assignment_2.out' has not changed.
 (rerunfilecheck)             Checksum: D99EF8CD50E0683F8E2667C095CF0321;455.
  ) 
 Here is how much of TeX's memory you used:
- 52694 strings out of 469461
- 1183011 string characters out of 5468710
- 1791327 words of memory out of 5000000
+ 52704 strings out of 469461
+ 1183181 string characters out of 5468710
+ 1791329 words of memory out of 5000000
  80443 multiletter control sequences out of 15000+600000
- 703607 words of font info for 182 fonts, out of 8000000 for 9000
+ 703883 words of font info for 185 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  84i,11n,117p,1099b,1220s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newtx/NewTXMI5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newtx/txexs.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newtx/txsym.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newtx/txsys.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newtx/ztmb.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
-Output written on Assignment_2.pdf (9 pages, 798503 bytes).
+Output written on Assignment_2.pdf (10 pages, 804694 bytes).
 PDF statistics:
- 193 PDF objects out of 1000 (max. 8388607)
- 153 compressed objects within 2 object streams
- 57 named destinations out of 1000 (max. 500000)
+ 201 PDF objects out of 1000 (max. 8388607)
+ 160 compressed objects within 2 object streams
+ 61 named destinations out of 1000 (max. 500000)
  22596 words of extra memory for PDF output out of 24883 (max. 10000000)
 

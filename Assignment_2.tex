@@ -690,22 +690,131 @@ f_Z(z)=\frac{1}{\sqrt{2\pi(32.2)}}
 \section{Problem 5}\label{pro:5}
 (8 pts) Assume that the monthly salaries of Hong Kong residents are i.i.d random variables
 with unknown mean, but assume the standard deviation is 15,000HKD. Alice wants to use the
-sample mean to estimate the mean value of the monthly salaries of Hong Kong residents.
+sample mean to estimate the mean value of the monthly salaries of Hong Kong residents.\\
 (a) Use the Central Limit Theorem to approximate the number of Hong Kong residents that
 should be surveyed, n, such that the sample mean is within 1000HKD of the actual mean
-with probability greater than or equal to 96\%.
+with probability greater than or equal to 96\%.\\
 (b) Suppose that the true mean monthly salary of a Hong Kong resident is 18,000HKD.
 Suppose we average the monthly salary of 500 Hong Kong residents. What is the
 probability that the measured average is within 1000HKD of the true mean?
 \paragraph{Solution}
 \paragraph{(a)}
+Let $X_1, X_2, \dots, X_n$ denote the monthly salaries of sampled Hong Kong residents, where the variables are i.i.d. with mean $\mu$ and standard deviation
+\[
+\sigma = 15000.
+\]
+Let $\overline{X}$ be the sample mean. By the Central Limit Theorem, for sufficiently large $n$,
+\[
+\overline{X} \approx N\left(\mu,\frac{\sigma^2}{n}\right)
+= N\left(\mu,\frac{15000^2}{n}\right).
+\]
+
+We want
+\[
+P\left(|\overline{X}-\mu|\le 1000\right)\ge 0.96.
+\]
+Standardizing,
+\[
+P\left(|\overline{X}-\mu|\le 1000\right)
+=
+P\left(
+\left|
+\frac{\overline{X}-\mu}{15000/\sqrt{n}}
+\right|
+\le
+\frac{1000}{15000/\sqrt{n}}
+\right)
+=
+P\left(|Z|\le \frac{\sqrt{n}}{15}\right),
+\]
+where $Z\sim N(0,1)$.
+
+Since
+\[
+P(|Z|\le z)=0.96,
+\]
+we need
+\[
+z=z_{0.98}\approx 2.054,
+\]
+because the two tails together have probability $0.04$, so each tail has probability $0.02$.
+
+Thus,
+\[
+\frac{\sqrt{n}}{15}\ge 2.054.
+\]
+Hence,
+\[
+\sqrt{n}\ge 15(2.054)=30.81,
+\]
+so
+\[
+n\ge (30.81)^2 \approx 949.26.
+\]
+
+Therefore, the minimum required sample size is
+\[
+\boxed{n=950.}
+\]
 
 \paragraph{(b)}
+Now suppose that the true mean monthly salary is
+\[
+\mu=18000,
+\]
+and the sample size is $n=500$. By the Central Limit Theorem,
+\[
+\overline{X} \approx N\left(18000,\frac{15000^2}{500}\right).
+\]
 
+We want to compute
+\[
+P\left(|\overline{X}-18000|\le 1000\right).
+\]
+Standardizing,
+\[
+P\left(|\overline{X}-18000|\le 1000\right)
+=
+P\left(
+\left|
+\frac{\overline{X}-18000}{15000/\sqrt{500}}
+\right|
+\le
+\frac{1000}{15000/\sqrt{500}}
+\right).
+\]
 
+Thus,
+\[
+P\left(|\overline{X}-18000|\le 1000\right)
+=
+P\left(|Z|\le \frac{1000\sqrt{500}}{15000}\right)
+=
+P\left(|Z|\le \frac{\sqrt{500}}{15}\right),
+\]
+where $Z\sim N(0,1)$.
 
+Now,
+\[
+\frac{\sqrt{500}}{15}\approx 1.491.
+\]
+Therefore,
+\[
+P\left(|Z|\le 1.491\right)=2\Phi(1.491)-1.
+\]
+Using the standard normal table,
+\[
+\Phi(1.491)\approx 0.932.
+\]
+Hence,
+\[
+P\left(|\overline{X}-18000|\le 1000\right)
+\approx 2(0.932)-1=0.864.
+\]
 
-
-
+Therefore, the required probability is approximately
+\[
+\boxed{0.864.}
+\]
 
 \end{document}
