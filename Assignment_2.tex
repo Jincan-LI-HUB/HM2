@@ -441,14 +441,40 @@ c(x + y)e^{-y}, & -y \leq x \leq y, \quad 0 \leq y \leq \infty \\
 \]
 For this question, it may be useful to draw the region in the $X$, $Y$ plane where the pdf is non-
 zero to help you determine the limits of the integrals.
-(a) Find the value of the constant $c$.
-(b) Find the marginal pdfs of $X$ and $Y$, respectively.
-(c) Find the probability that $X > 2$ and $Y > 2$, $P[X > 2 \cap Y > 2]$.
-(d) Find the conditional pdf of $X$ given $Y$, $f_{X|Y}(x|y)$. Plot $f_{X|Y}(x|y)$ for $y = 2$.
-(e) Find the conditional expectation of $X$ given $Y = y$, $\mathbb{E}[X|y]$. Plot $\mathbb{E}[X|y]$ for $y$ from 0 to 6.
+\begin{enumerate}[label=(\alph*)]
+    \item Find the value of the constant $c$.
+    \item Find the marginal pdfs of $X$ and $Y$, respectively.
+    \item Find the probability that $X > 2$ and $Y > 2$, $P[X > 2 \cap Y > 2]$.
+    \item Find the conditional pdf of $X$ given $Y$, $f_{X|Y}(x|y)$. Plot $f_{X|Y}(x|y)$ for $y = 2$.
+    \item Find the conditional expectation of $X$ given $Y = y$, $\mathbb{E}[X|y]$. Plot $\mathbb{E}[X|y]$ for $y$ from 0 to 6.
+\end{enumerate}
 
-
-
+\paragraph{Solution}
+\paragraph{(a)}
+We have the integration of the pdf must be 1, so we can integrate the pdf to get the $c$
+\[
+\int_{0}^{\infty} \int_{-y}^{y} c(x+y)e^{-y} dx dy = 1
+\]
+we integrate the $x$ first:
+\[
+\int_{-y}^{y}(x + y) dx = \int_{-y}^{y} x dx + \int_{-y}^{y} y dx = 0 + 2y^2 = 2y^2
+\]
+So the 
+\[
+\int_{-y}^{y} = c(x + y)e^{-y}dx = 2cy^2e^{-y}
+\]
+And substitude it into the original equation,
+\[
+\int_{0}^{\infty}2cy^2e^{-y}dy = 1
+\]
+By the Gamma function identity, we have
+\[
+\int_{0}^{\infty}y^2e^{-y}dy = 2! = 2
+\]
+So we have
+\[
+\boxed{c = \frac{1}{4}}
+\]
 
 
 
