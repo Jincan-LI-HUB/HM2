@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.5)  9 MAR 2026 19:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.5)  9 MAR 2026 20:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1600,15 +1600,15 @@ Package rerunfilecheck Info: File `Assignment_2.out' has not changed.
 (rerunfilecheck)             Checksum: D99EF8CD50E0683F8E2667C095CF0321;455.
  ) 
 Here is how much of TeX's memory you used:
- 52654 strings out of 469461
- 1182511 string characters out of 5468710
+ 52660 strings out of 469461
+ 1182635 string characters out of 5468710
  1791263 words of memory out of 5000000
  80427 multiletter control sequences out of 15000+600000
- 703515 words of font info for 181 fonts, out of 8000000 for 9000
+ 703791 words of font info for 184 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  84i,11n,117p,1099b,1122s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newtx/NewTXMI5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newtx/txexs.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newtx/txsym.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newtx/txsys.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newtx/ztmb.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
-Output written on Assignment_2.pdf (5 pages, 357926 bytes).
+Output written on Assignment_2.pdf (5 pages, 360720 bytes).
 PDF statistics:
  147 PDF objects out of 1000 (max. 8388607)
  115 compressed objects within 2 object streams
