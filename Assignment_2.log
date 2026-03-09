@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.5)  9 MAR 2026 21:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.5)  9 MAR 2026 22:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1591,39 +1591,48 @@ Package pdftex.def Info: fig_1.png  used on input line 276.
 (pdftex.def)             Requested size: 423.92897pt x 230.79655pt.
  [2
 
-{c:/texlive/2025/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc} <./fig_1.png>] [3] [4] [5]
-<fig_3.png, id=98, 712.5822pt x 424.9476pt>
+{c:/texlive/2025/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc} <./fig_1.png>]
+<fig_2.png, id=61, 712.5822pt x 424.9476pt>
+File: fig_2.png Graphic file (type png)
+<use fig_2.png>
+Package pdftex.def Info: fig_2.png  used on input line 331.
+(pdftex.def)             Requested size: 423.92897pt x 252.81128pt.
+ [3 <./fig_2.png>] [4] [5] [6]
+<fig_3.png, id=106, 712.5822pt x 424.9476pt>
 File: fig_3.png Graphic file (type png)
 <use fig_3.png>
-Package pdftex.def Info: fig_3.png  used on input line 559.
+Package pdftex.def Info: fig_3.png  used on input line 565.
 (pdftex.def)             Requested size: 423.92897pt x 252.81128pt.
- [6]
-<fig_4.png, id=106, 713.5458pt x 426.2324pt>
+<fig_4.png, id=107, 713.5458pt x 426.2324pt>
 File: fig_4.png Graphic file (type png)
 <use fig_4.png>
-Package pdftex.def Info: fig_4.png  used on input line 574.
+Package pdftex.def Info: fig_4.png  used on input line 580.
 (pdftex.def)             Requested size: 423.92897pt x 253.23096pt.
- [7 <./fig_3.png> <./fig_4.png>] [8] [9] [10] (./Assignment_2.aux)
+ [7 <./fig_3.png>] [8 <./fig_4.png>] [9] [10] [11] (./Assignment_2.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `Assignment_2.out' has not changed.
 (rerunfilecheck)             Checksum: D99EF8CD50E0683F8E2667C095CF0321;455.
  ) 
 Here is how much of TeX's memory you used:
- 52704 strings out of 469461
- 1183181 string characters out of 5468710
- 1791329 words of memory out of 5000000
- 80443 multiletter control sequences out of 15000+600000
+ 52714 strings out of 469461
+ 1183323 string characters out of 5468710
+ 1788361 words of memory out of 5000000
+ 80451 multiletter control sequences out of 15000+600000
  703883 words of font info for 185 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 84i,11n,117p,1099b,1220s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,11n,117p,1099b,1122s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newtx/NewTXMI5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newtx/txexs.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newtx/txsym.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newtx/txsys.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newtx/ztmb.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
-Output written on Assignment_2.pdf (10 pages, 804694 bytes).
+Output written on Assignment_2.pdf (11 pages, 1048018 bytes).
 PDF statistics:
- 201 PDF objects out of 1000 (max. 8388607)
- 160 compressed objects within 2 object streams
- 61 named destinations out of 1000 (max. 500000)
- 22596 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 208 PDF objects out of 1000 (max. 8388607)
+ 164 compressed objects within 2 object streams
+ 63 named destinations out of 1000 (max. 500000)
+ 22601 words of extra memory for PDF output out of 24883 (max. 10000000)
 
